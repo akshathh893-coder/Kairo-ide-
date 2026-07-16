@@ -10,7 +10,9 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "lint": "echo \"Linting will be configured in a later commit\""
+    "start": "node dist/cli.js",
+    "kairo": "node dist/cli.js",
+    "lint": "echo \"Linting will be configured in a later phase\""
   },
   "engines": {
     "node": ">=20"

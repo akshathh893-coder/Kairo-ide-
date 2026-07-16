@@ -1,6 +1,6 @@
 # KAIRO Cloud IDE — Roadmap
 
-## Phase 1 — Foundation (Current — largely complete)
+## Phase 1 — Foundation (Current — nearly complete)
 
 Goal: A clean, well-documented repository that can bootstrap itself and run in Codespaces.
 
@@ -15,10 +15,11 @@ Goal: A clean, well-documented repository that can bootstrap itself and run in C
 - [x] `.claude/` context and playbooks
 - [x] Provider interface specification
 - [x] Implementation Queue
-- [ ] Minimal TypeScript CLI skeleton (`kairo doctor`, `kairo --help`)
+- [x] Minimal TypeScript CLI skeleton (`kairo doctor`, `kairo --help`)
 - [ ] Formal TypeScript types for the Provider interface
+- [ ] Codespaces polish & green doctor on first open
 
-**Exit criteria**: A contributor can open the repo in Codespaces and have a working environment in < 2 minutes. `./doctor.sh` reports green (or only optional warnings) after bootstrap.
+**Exit criteria**: A contributor can open the repo in Codespaces and have a working environment in < 2 minutes. `./doctor.sh` (and `kairo doctor`) reports green (or only optional warnings) after bootstrap.
 
 ## Phase 2 — Cloud Infrastructure
 

@@ -4,8 +4,8 @@ Ordered list of the next concrete pieces of work. Claude Code (or human contribu
 
 ## Immediate (Phase 1 completion)
 
-1. **CLI skeleton**  
-   Create a minimal TypeScript CLI that can run `kairo doctor` (wrapping or re-implementing the shell doctor) and `kairo --help`.
+1. ~~**CLI skeleton**~~ ✅  
+   Minimal TypeScript CLI that can run `kairo doctor` (wrapping the shell doctor) and `kairo --help` / `--version`.
 
 2. **Provider interface TypeScript definition**  
    Formalize `docs/specifications/provider/SPEC.md` into actual TypeScript types under `cli/src/providers/types.ts` (or similar).
