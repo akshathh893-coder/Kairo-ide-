@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: ShellCheck
+        uses: ludeeus/action-shellcheck@master
+        with:
+          scandir: '.'
+          ignore_paths: node_modules
+
+      - name: Check for secrets
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: ${{ github.event.repository.default_branch }}
+          head: HEAD
+
+      - name: Validate Markdown
+        run: |
+          # Basic check that key docs exist
+          test -f README.md
+          test -f docs/architecture/OVERVIEW.md
+          test -f docs/roadmap/ROADMAP.md
+          test -f docs/standards/DEVELOPMENT_MODEL.md
+
+      - name: Make scripts executable check
+        run: |
+          test -x doctor.sh || chmod +x doctor.sh
+          test -x install.sh || chmod +x install.sh
