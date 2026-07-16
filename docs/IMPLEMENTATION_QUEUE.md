@@ -2,26 +2,29 @@
 
 Ordered list of the next concrete pieces of work. Claude Code (or human contributors) should pick from the top.
 
-## Immediate (Phase 1 completion)
+## Phase 1 — Foundation (Architect close-out complete)
 
-1. ~~**CLI skeleton**~~ ✅  
-   Minimal TypeScript CLI that can run `kairo doctor` (wrapping the shell doctor) and `kairo --help` / `--version`.
+1. ~~CLI skeleton~~ ✅
+2. ~~Provider interface TypeScript definition~~ ✅
+3. ~~Local provider stub + registry~~ ✅
+4. ~~CLI integration (`kairo doctor`, `kairo providers`)~~ ✅
+5. ~~Codespaces polish~~ ✅
+6. ~~CLI + Local provider specifications~~ ✅
 
-2. **Provider interface TypeScript definition**  
-   Formalize `docs/specifications/provider/SPEC.md` into actual TypeScript types under `cli/src/providers/types.ts` (or similar).
+## Next work (Phase 2 preparation — for Claude Code / future sessions)
 
-3. **Codespaces polish**  
-   Ensure `.devcontainer/devcontainer.json` starts cleanly and that `postCreateCommand` leaves the environment in a green doctor state.
+These items require following the DEVELOPMENT_MODEL:
 
-4. **First real ADR for free-tier strategy**  
-   Document why Oracle Always Free is the preferred long-running target and the constraints it imposes.
+1. Write full specification for Local Provider create/destroy/status (expand the existing stub SPEC).
+2. Implement Local Provider runtime against that specification (Docker Compose reference stack).
+3. Add Cloudflare Tunnel helper specification + minimal scripts.
+4. Add Tailscale join helper specification + minimal scripts.
+5. Oracle Free Tier provider specification (high priority free path).
 
-## Shortly after
+## Rules for implementers
 
-5. Local Docker Compose reference stack (code-server + Caddy)
-6. Basic Cloudflare Tunnel helper scripts
-7. Tailscale join helper
-
----
-
-*Update this file when items are completed or priorities shift. Major priority changes should also update the ROADMAP.*
+- Read the relevant SPEC.md first.
+- Do not redesign interfaces.
+- Do not invent new public commands or provider methods without updating the specification.
+- Keep PRs small and focused.
+- Update this queue when an item is completed.

@@ -22,7 +22,8 @@
       }
     }
   },
-  "postCreateCommand": "chmod +x doctor.sh install.sh && ./install.sh",
+  "postCreateCommand": "chmod +x doctor.sh install.sh && ./install.sh && npm install && npm run build",
+  "postStartCommand": "echo 'KAIRO Cloud IDE ready. Run: npx kairo doctor'",
   "forwardPorts": [8080, 3000],
   "portsAttributes": {
     "8080": {

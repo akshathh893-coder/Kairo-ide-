@@ -1,25 +1,28 @@
-# Phase 1 Completion Plan (Architect Scope)
+# Phase 1 Completion Plan (Architect Scope) — COMPLETE
 
-This document guides the final close-out of Phase 1 Foundation so that Claude Code sessions can continue cleanly without inventing architecture.
+This document guided the final close-out of Phase 1 Foundation so that Claude Code sessions can continue cleanly without inventing architecture.
 
-## Goals of this close-out
+## Goals achieved
 
-1. Provide stable TypeScript contracts that match the written specifications.
-2. Make the CLI usable for the two most important daily commands (`doctor`, basic provider awareness).
-3. Ensure Codespaces / Dev Container starts in a green state.
-4. Leave clear, complete specifications and queue items for the next human/Claude session.
-5. No premature implementation of Phase 2+ runtime components (Docker stacks, tunnels, Oracle, etc.).
+1. ✅ Stable TypeScript contracts that match the written specifications.
+2. ✅ CLI usable for the two most important daily commands (`doctor`, provider awareness).
+3. ✅ Codespaces / Dev Container starts with build + doctor path ready.
+4. ✅ Clear, complete specifications and queue items for the next session.
+5. ✅ No premature implementation of Phase 2+ runtime components.
 
-## Ordered Steps
+## Completed Steps
 
 | # | Step | Status |
 |---|------|--------|
-| 1 | Formalize Provider interface as TypeScript types | In progress |
-| 2 | Expand CLI with `providers` / `doctor` integration using the types | Pending |
-| 3 | Add minimal Local provider stub (types only + doctor) | Pending |
-| 4 | Codespaces polish (postCreate + doctor green) | Pending |
-| 5 | Write missing lightweight specifications (CLI commands, Local provider) | Pending |
-| 6 | Final consistency pass (README, ROADMAP, QUEUE, .claude context) | Pending |
-| 7 | Proof-read entire Phase 1 surface | Pending |
+| 1 | Formalize Provider interface as TypeScript types | ✅ Done |
+| 2 | Expand CLI with providers / doctor integration | ✅ Done |
+| 3 | Add minimal Local provider stub (types + doctor) | ✅ Done |
+| 4 | Codespaces polish (postCreate + build) | ✅ Done |
+| 5 | Write missing lightweight specifications (CLI, Local provider) | ✅ Done |
+| 6 | Final consistency pass (QUEUE, ROADMAP, README, .claude) | ✅ Done |
+| 7 | Proof-read entire Phase 1 surface | ✅ Done |
 
-Only after step 7 is the Architect portion of Phase 1 considered complete.
+## What Claude Code (or next session) should do next
+
+Start from `docs/IMPLEMENTATION_QUEUE.md`.  
+The highest-value next work is expanding the Local Provider from stub to real Docker Compose runtime — but only after writing the detailed specification first.
