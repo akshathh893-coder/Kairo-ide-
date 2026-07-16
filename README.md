@@ -30,12 +30,12 @@ cd Kairo-ide-
 # Health check
 ./doctor.sh
 
-# Or use the CLI (once installed)
+# Or use the CLI (once the TypeScript CLI lands)
 kairo doctor
 kairo bootstrap
 ```
 
-For GitHub Codespaces: just open the repository in Codespaces — the `.devcontainer` handles the rest.
+**Fastest path right now**: Open this repository in **GitHub Codespaces**. The `.devcontainer` configures a ready environment automatically.
 
 ## Architecture Overview
 
@@ -90,19 +90,25 @@ docs/
 No one invents APIs mid-implementation.  
 No one redesigns architecture in a PR.
 
+See [docs/standards/DEVELOPMENT_MODEL.md](docs/standards/DEVELOPMENT_MODEL.md) and [ADR-0003](docs/adr/ADR-0003-development-model.md).
+
 ## Current Status
 
-**Phase 1 — Foundation** (in progress)
+**Phase 1 — Foundation** (mostly complete)
 
-- [x] Repository structure
-- [x] Documentation skeleton
-- [ ] CLI foundation
-- [ ] Bootstrap pipeline
-- [ ] Doctor system
-- [ ] Codespaces / Devcontainer
-- [ ] Basic CI
+- [x] Repository structure & documentation-first layout
+- [x] Architecture overview & guiding principles
+- [x] Development model (strict Architect ↔ Implementer separation)
+- [x] Doctor system with actionable guidance
+- [x] Bootstrap / install script
+- [x] Codespaces / Dev Container
+- [x] Basic CI (structure + secret scanning)
+- [x] Provider interface specification
+- [x] Implementation Queue & Claude context files
+- [ ] Minimal TypeScript CLI (`kairo`)
+- [ ] Formal TS types for providers
 
-See [docs/roadmap/ROADMAP.md](docs/roadmap/ROADMAP.md) for the full plan.
+See [docs/roadmap/ROADMAP.md](docs/roadmap/ROADMAP.md) and [docs/IMPLEMENTATION_QUEUE.md](docs/IMPLEMENTATION_QUEUE.md) for what’s next.
 
 ## Supported Providers (Planned)
 
@@ -120,6 +126,7 @@ See [docs/roadmap/ROADMAP.md](docs/roadmap/ROADMAP.md) for the full plan.
 2. Implement exactly against the interfaces and acceptance criteria
 3. Do not redesign. If the spec is incomplete, open an issue or update the ADR first.
 4. Keep PRs small and focused.
+5. Check [docs/IMPLEMENTATION_QUEUE.md](docs/IMPLEMENTATION_QUEUE.md) for prioritized next work.
 
 ## License
 
