@@ -27,12 +27,13 @@ cd Kairo-ide-
 # Bootstrap (idempotent)
 ./install.sh
 
-# Health check
+# Health check (shell)
 ./doctor.sh
 
-# Or use the CLI (once the TypeScript CLI lands)
-kairo doctor
-kairo bootstrap
+# Or via the new TypeScript CLI (after build)
+npm run build
+npx kairo doctor
+# or once linked: kairo doctor
 ```
 
 **Fastest path right now**: Open this repository in **GitHub Codespaces**. The `.devcontainer` configures a ready environment automatically.
@@ -94,7 +95,7 @@ See [docs/standards/DEVELOPMENT_MODEL.md](docs/standards/DEVELOPMENT_MODEL.md) a
 
 ## Current Status
 
-**Phase 1 — Foundation** (mostly complete)
+**Phase 1 — Foundation** (nearly complete)
 
 - [x] Repository structure & documentation-first layout
 - [x] Architecture overview & guiding principles
@@ -105,8 +106,9 @@ See [docs/standards/DEVELOPMENT_MODEL.md](docs/standards/DEVELOPMENT_MODEL.md) a
 - [x] Basic CI (structure + secret scanning)
 - [x] Provider interface specification
 - [x] Implementation Queue & Claude context files
-- [ ] Minimal TypeScript CLI (`kairo`)
-- [ ] Formal TS types for providers
+- [x] Minimal TypeScript CLI skeleton (`kairo doctor`, `kairo --help`)
+- [ ] Formal TypeScript types for the Provider interface
+- [ ] Codespaces polish & green doctor on first open
 
 See [docs/roadmap/ROADMAP.md](docs/roadmap/ROADMAP.md) and [docs/IMPLEMENTATION_QUEUE.md](docs/IMPLEMENTATION_QUEUE.md) for what’s next.
 
