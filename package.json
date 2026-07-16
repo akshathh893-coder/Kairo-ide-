@@ -1,0 +1,25 @@
+{
+  "name": "kairo-cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "KAIRO Cloud IDE command-line interface",
+  "type": "module",
+  "bin": {
+    "kairo": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "echo \"Linting will be configured in a later commit\""
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "kairo",
+    "cloud-ide",
+    "devcontainer",
+    "ipad-dev"
+  ],
+  "license": "UNLICENSED"
+}
