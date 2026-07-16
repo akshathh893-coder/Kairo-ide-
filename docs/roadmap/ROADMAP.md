@@ -1,39 +1,43 @@
 # KAIRO Cloud IDE — Roadmap
 
-## Phase 1 — Foundation (Current)
+## Phase 1 — Foundation (Current — largely complete)
 
 Goal: A clean, well-documented repository that can bootstrap itself and run in Codespaces.
 
 - [x] Repository structure & documentation-first layout
 - [x] Architecture overview & guiding principles
-- [ ] Core CLI skeleton (`kairo`)
-- [ ] `install.sh` / `bootstrap` pipeline
-- [ ] `doctor.sh` with comprehensive checks
-- [ ] `.devcontainer` + GitHub Codespaces support
-- [ ] Basic GitHub Actions CI (lint, validate, security)
-- [ ] Initial ADRs and coding standards
-- [ ] `.claude/` playbooks and context files
+- [x] Development model (Architect ↔ Claude Code separation)
+- [x] Initial ADRs
+- [x] Doctor system (`doctor.sh`) with actionable guidance
+- [x] Bootstrap / install script
+- [x] `.devcontainer` + GitHub Codespaces support
+- [x] Basic GitHub Actions CI (structure validation + secret scanning)
+- [x] `.claude/` context and playbooks
+- [x] Provider interface specification
+- [x] Implementation Queue
+- [ ] Minimal TypeScript CLI skeleton (`kairo doctor`, `kairo --help`)
+- [ ] Formal TypeScript types for the Provider interface
 
-**Exit criteria**: A contributor can open the repo in Codespaces and have a working environment in < 2 minutes. `./doctor.sh` reports green on a clean machine after bootstrap.
+**Exit criteria**: A contributor can open the repo in Codespaces and have a working environment in < 2 minutes. `./doctor.sh` reports green (or only optional warnings) after bootstrap.
 
 ## Phase 2 — Cloud Infrastructure
 
-- Docker + Compose reference stack
+- Docker + Compose reference stack (code-server focused)
 - Caddy (or Traefik) reverse proxy
-- Cloudflare Tunnel integration
-- Tailscale integration & MagicDNS
-- Oracle Cloud Free Tier provider (primary free path)
+- Cloudflare Tunnel integration helpers
+- Tailscale integration & MagicDNS helpers
+- Oracle Cloud Free Tier provider (primary free long-running path)
 - Basic monitoring (CPU, memory, disk, tunnel health)
-- Automated certificate handling
+- Automated certificate handling where applicable
 
 ## Phase 3 — Developer Experience
 
-- code-server / VS Code Server hardened for iPad
-- Claude Code deep integration
-- GitHub + CodeRabbit automation
+- Hardened code-server / openvscode-server experience optimized for iPad Safari
+- Claude Code deep integration and playbooks
+- GitHub + CodeRabbit automation refinements
 - SSH key management & one-command access
-- Remote terminal quality-of-life
-- Mobile-optimized web UI hints / progressive web app considerations
+- Remote terminal quality-of-life improvements
+- Progressive Web App / mobile browser considerations
 
 ## Phase 4 — Automation & Resilience
 
@@ -42,7 +46,7 @@ Goal: A clean, well-documented repository that can bootstrap itself and run in C
 - Automatic updates
 - Backup & restore (volumes, config, encrypted keys)
 - Provisioning orchestration
-- Cost-aware scheduling / auto-stop for free tiers
+- Cost-aware scheduling / auto-stop helpers for free tiers
 
 ## Phase 5 — KAIRO Ecosystem Integration
 
