@@ -2,13 +2,13 @@
 
 The `kairo` CLI is the single entry point for all automation in the Kairo Cloud IDE platform.
 
-## Current Status (Phase 1 Skeleton)
-
-Implemented:
+## Implemented (Phase 1)
 
 ```bash
-kairo doctor          # Runs the environment health checks
-kairo help            # Shows usage
+kairo doctor              # Host-level health checks (./doctor.sh)
+kairo doctor local        # Local provider doctor
+kairo providers           # List registered providers
+kairo help
 kairo --version
 ```
 
@@ -16,34 +16,19 @@ kairo --version
 
 ```bash
 # From repository root
-npm install          # (once dependencies are added)
-npm run build        # Compiles TypeScript → dist/
-npm run kairo doctor # Run via the built binary
+npm install
+npm run build             # Compiles TypeScript → dist/
+npx kairo doctor
+npx kairo providers
 ```
 
-Or during development:
+## Architecture Notes
 
-```bash
-npx tsx cli/src/cli.ts doctor
-```
+- Provider interface lives in `cli/src/providers/types.ts` (matches `docs/specifications/provider/SPEC.md`).
+- Providers register themselves in `cli/src/providers/registry.ts`.
+- New providers must implement the interface and be registered; no hard-coded switches elsewhere.
 
-## Planned Commands (see docs/specifications and IMPLEMENTATION_QUEUE)
+## Future Commands
 
-```
-kairo init
-kairo bootstrap
-kairo update
-kairo repair
-kairo deploy
-kairo provider
-kairo backup
-kairo restore
-kairo tunnel
-kairo status
-kairo logs
-kairo ssh
-kairo cloud
-kairo sync
-```
-
-All new commands must be backed by a written specification before implementation.
+See `docs/specifications/cli/SPEC.md` and `docs/IMPLEMENTATION_QUEUE.md`.  
+Do not implement new commands without a written specification first.
